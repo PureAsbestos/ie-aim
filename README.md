@@ -1,2 +1,2 @@
-# ie-aim
-IE-Aim
+# IE-Aim
+The IE aim trainer.

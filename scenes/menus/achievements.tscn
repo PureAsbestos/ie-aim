@@ -16,10 +16,10 @@ color = Color(0.141176, 0.427451, 0.392157, 1)
 
 [node name="backButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 466.0
-offset_top = 265.0
-offset_right = 571.0
-offset_bottom = 304.0
+offset_left = 521.0
+offset_top = 300.0
+offset_right = 626.0
+offset_bottom = 339.0
 text = "Back
 "
 

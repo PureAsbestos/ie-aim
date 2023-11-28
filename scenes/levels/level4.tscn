@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://vskwri8xahyw"]
 
-[ext_resource type="Script" path="res://scripts/levelScripts/level.gd" id="1_plqna"]
+[ext_resource type="Script" path="res://scripts/levelScripts/gridShot.gd" id="1_e6234"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jol7j"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -16,7 +16,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="level" type="Node3D"]
-script = ExtResource("1_plqna")
+script = ExtResource("1_e6234")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v6n0q")

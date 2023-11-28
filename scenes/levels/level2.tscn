@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dnlsx7lni6itp"]
 
-[ext_resource type="Script" path="res://scripts/levelScripts/level.gd" id="1_j0dmu"]
+[ext_resource type="Script" path="res://scripts/levelScripts/targetTrack.gd" id="1_16p7g"]
 [ext_resource type="PackedScene" uid="uid://cy73ttcdq5esr" path="res://scenes/Character.tscn" id="2_pljqo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jol7j"]
@@ -22,7 +22,7 @@ glow_enabled = true
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [node name="level" type="Node3D"]
-script = ExtResource("1_j0dmu")
+script = ExtResource("1_16p7g")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v6n0q")

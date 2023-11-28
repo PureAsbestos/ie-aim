@@ -17,8 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MenuButtons="*res://scripts/MenuButtons.gd"
+MenuButtons="*res://scripts/autoload/MenuButtons.gd"
 GlobalSettings="*res://scripts/autoload/global_settings.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

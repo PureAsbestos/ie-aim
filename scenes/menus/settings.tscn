@@ -1,0 +1,120 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwfm6a0rfv30"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_53ome"]
+[ext_resource type="PackedScene" uid="uid://clwh0f7b4vgwe" path="res://scenes/menus/volumeSlider.tscn" id="2_vox6b"]
+
+[node name="settings" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_53ome")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 649.0
+color = Color(0.141176, 0.427451, 0.392157, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 18.0
+offset_right = 699.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 70
+text = "Settings
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 125.0
+offset_right = 703.0
+offset_bottom = 197.0
+theme_override_font_sizes/font_size = 50
+text = "Video
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Video" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 209.0
+offset_right = 682.0
+offset_bottom = 382.0
+
+[node name="CheckButton" type="CheckButton" parent="Video"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Full Screen:"
+alignment = 2
+expand_icon = true
+
+[node name="CheckButton2" type="CheckButton" parent="Video"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Vsync:"
+alignment = 2
+icon_alignment = 2
+expand_icon = true
+
+[node name="Audio" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 321.0
+offset_right = 886.0
+offset_bottom = 703.0
+
+[node name="Label2" type="Label" parent="Audio"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Audio
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label" type="Label" parent="Audio"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="Master" parent="Audio" instance=ExtResource("2_vox6b")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="label2" type="Label" parent="Audio"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="Music" parent="Audio" instance=ExtResource("2_vox6b")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="label3" type="Label" parent="Audio"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "SFX Volume
+"
+horizontal_alignment = 1
+
+[node name="UI" parent="Audio" instance=ExtResource("2_vox6b")]
+layout_mode = 2
+bus_name = "UI"
+
+[node name="backButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 23.0
+offset_right = 195.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[connection signal="pressed" from="backButton" to="." method="_on_return_button_pressed"]

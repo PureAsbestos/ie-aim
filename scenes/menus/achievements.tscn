@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://uhypuwevbn7a"]
+
+[ext_resource type="Script" path="res://scripts/achievements.gd" id="1_1lsws"]
+
+[node name="achievements" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1lsws")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 649.0
+color = Color(0.141176, 0.427451, 0.392157, 1)
+
+[node name="backButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 265.0
+offset_right = 571.0
+offset_bottom = 304.0
+text = "Back
+"
+
+[connection signal="pressed" from="backButton" to="." method="_on_return_button_pressed"]

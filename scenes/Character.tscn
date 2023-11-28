@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy73ttcdq5esr"]
+[gd_scene load_steps=6 format=3 uid="uid://cy73ttcdq5esr"]
 
 [ext_resource type="Script" path="res://scripts/Character.gd" id="1_sfax3"]
 [ext_resource type="PackedScene" uid="uid://dbmx0qunnoo20" path="res://scenes/gun.tscn" id="2_1eauq"]
+[ext_resource type="Script" path="res://scripts/autoload/global_settings.gd" id="3_pqoy3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_itt10"]
 
@@ -25,3 +26,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.628171, 0)
 
 [node name="Gun" parent="Neck/Camera3D" instance=ExtResource("2_1eauq")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.451276, -0.628171, -1.05193)
+script = ExtResource("3_pqoy3")

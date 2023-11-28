@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://c75ggam17ikbo"]
+
+[ext_resource type="Script" path="res://scripts/pause.gd" id="1_hp82j"]
+[ext_resource type="PackedScene" uid="uid://uhypuwevbn7a" path="res://scenes/menus/achievements.tscn" id="2_i0575"]
+[ext_resource type="PackedScene" uid="uid://cwfm6a0rfv30" path="res://scenes/menus/settings.tscn" id="3_u77qi"]
+
+[node name="p" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_hp82j")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 65.0
+offset_right = 758.0
+offset_bottom = 595.0
+color = Color(0.290196, 0.505882, 0.698039, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 96.0
+offset_right = 642.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 50
+text = "Pause"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 191.0
+offset_right = 683.0
+offset_bottom = 699.0
+
+[node name="settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Settings"
+
+[node name="achievements" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Achievements"
+
+[node name="resetLevel" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Reset Level"
+
+[node name="resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Resume"
+
+[node name="mainMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Main Menu"
+
+[node name="quitGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Quit Game"
+
+[node name="achievements" parent="." instance=ExtResource("2_i0575")]
+visible = false
+
+[node name="settings" parent="." instance=ExtResource("3_u77qi")]
+visible = false
+mouse_filter = 2
+
+[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/achievements" to="." method="_on_achievements_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/resetLevel" to="." method="_on_reset_level_pressed"]
+[connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/mainMenu" to="." method="_on_main_menu_pressed"]

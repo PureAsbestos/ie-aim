@@ -46,14 +46,14 @@ text = "Video
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CheckButton" type="CheckButton" parent="Video"]
+[node name="fullScreen" type="CheckButton" parent="Video"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Full Screen:"
 alignment = 2
 expand_icon = true
 
-[node name="CheckButton2" type="CheckButton" parent="Video"]
+[node name="vSync" type="CheckButton" parent="Video"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Vsync:"
@@ -116,4 +116,5 @@ offset_bottom = 630.0
 theme_override_font_sizes/font_size = 30
 text = "Back"
 
+[connection signal="toggled" from="Video/fullScreen" to="." method="_on_full_screen_toggled"]
 [connection signal="pressed" from="backButton" to="." method="_on_return_button_pressed"]

@@ -55,3 +55,9 @@ func install_sounds(node: Node) -> void:
 
 func ui_sfx_play(sound : String) -> void:
 	sounds[sound].play()
+
+func enableFullScreen(toggled: bool):
+	if toggled == true:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

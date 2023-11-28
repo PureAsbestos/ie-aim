@@ -17,9 +17,20 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MenuButtons="*res://scripts/MenuButtons.gd"
+MenuButtons="*res://scripts/autoload/MenuButtons.gd"
 GlobalSettings="*res://scripts/autoload/global_settings.gd"
 
+<<<<<<< Updated upstream
+=======
+[display]
+
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/zylann.hterrain/plugin.cfg")
+
+>>>>>>> Stashed changes
 [input]
 
 pause={

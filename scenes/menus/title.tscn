@@ -47,7 +47,7 @@ text = "Level Select"
 [node name="Achievements" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Achievements
+text = "Record Charts
 "
 
 [node name="settingButton" type="Button" parent="Panel/VBoxContainer"]

@@ -10,7 +10,13 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 
-func _unhandled_input(event: InputEvent) -> void:
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input
+	print("mouse captured")
+
+func _input(event: InputEvent) -> void:
+	print("mouse input 1")
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):

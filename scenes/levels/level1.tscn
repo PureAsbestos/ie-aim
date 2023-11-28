@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bxu0yshg8o8i0"]
 
-[ext_resource type="Script" path="res://scripts/levelScripts/level.gd" id="1_lfivh"]
+[ext_resource type="Script" path="res://scripts/levelScripts/gridShot.gd" id="1_1ruso"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jol7j"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -36,7 +36,7 @@ size = Vector2(300, 300)
 orientation = 1
 
 [node name="level" type="Node3D"]
-script = ExtResource("1_lfivh")
+script = ExtResource("1_1ruso")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v6n0q")
@@ -72,7 +72,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -150, 
 mesh = SubResource("QuadMesh_1rip5")
 
 [node name="Ground" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Ground"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)

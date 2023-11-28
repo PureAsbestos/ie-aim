@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://gmriuq8la1yf"]
 
-[ext_resource type="Script" path="res://scripts/levelScripts/level.gd" id="1_lrpjv"]
+[ext_resource type="Script" path="res://scripts/levelScripts/gridShot.gd" id="1_lrpjv"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jol7j"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

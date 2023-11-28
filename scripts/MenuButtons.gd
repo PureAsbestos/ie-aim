@@ -26,8 +26,8 @@ func _on_levelSelect_button_pressed(levelNum: int):
 func _on_settings_button_pressed():
 	emit_signal("scene_change", "settings", 0)
 
-func _on_achievements_button_pressed():
-	emit_signal("scene_change", "achievements", 0)
+func _on_charts_button_pressed():
+	emit_signal("scene_change", "charts", 0)
 
 # to disable ANY input (mouse) during scene transitions
 func inputHandle(handle: String):

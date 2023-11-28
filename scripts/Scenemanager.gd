@@ -43,8 +43,8 @@ func _handle_scene_change(go_to_scene: String, levelNum: int):
 			next_scene_name = "title"
 			MenuButtons.pmenuButton = false
 			#animation_name =
-		"achievements":
-			next_scene_name = "achievements"
+		"charts":
+			next_scene_name = "charts"
 			#animation_name =
 		_:
 			return

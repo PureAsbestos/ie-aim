@@ -44,7 +44,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Level Select"
 
-[node name="Achievements" type="Button" parent="Panel/VBoxContainer"]
+[node name="charts" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Record Charts
@@ -75,20 +75,21 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Grid Shot"
 
-[node name="level2" type="Button" parent="levelSelect/VBoxContainer"]
+[node name="targetTrack" type="Button" parent="levelSelect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Level 2"
+text = "Target Track"
 
-[node name="Button3" type="Button" parent="levelSelect/VBoxContainer"]
+[node name="flickShot" type="Button" parent="levelSelect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Level 3"
+text = "Flick Shot"
 
-[node name="Button4" type="Button" parent="levelSelect/VBoxContainer"]
+[node name="timedShot" type="Button" parent="levelSelect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Level 4"
+text = "Timed Shot
+"
 
 [node name="Button5" type="Button" parent="levelSelect/VBoxContainer"]
 layout_mode = 2
@@ -104,8 +105,10 @@ text = "Back
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="pressed" from="Panel/VBoxContainer/levelSelect" to="." method="_on_level_select_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Achievements" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/charts" to="." method="_on_charts_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="levelSelect/VBoxContainer/gridShot" to="." method="_on_grid_shot_pressed"]
-[connection signal="pressed" from="levelSelect/VBoxContainer/level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="levelSelect/VBoxContainer/targetTrack" to="." method="_on_target_track_pressed"]
+[connection signal="pressed" from="levelSelect/VBoxContainer/flickShot" to="." method="_on_flick_shot_pressed"]
+[connection signal="pressed" from="levelSelect/VBoxContainer/timedShot" to="." method="_on_timed_shot_pressed"]
 [connection signal="pressed" from="levelSelect/VBoxContainer/backButton" to="." method="_on_back_button_pressed"]

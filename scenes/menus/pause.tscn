@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c75ggam17ikbo"]
 
 [ext_resource type="Script" path="res://scripts/pause.gd" id="1_hp82j"]
-[ext_resource type="PackedScene" uid="uid://uhypuwevbn7a" path="res://scenes/menus/achievements.tscn" id="2_i0575"]
+[ext_resource type="PackedScene" uid="uid://uhypuwevbn7a" path="res://scenes/menus/charts.tscn" id="2_i0575"]
 [ext_resource type="PackedScene" uid="uid://cwfm6a0rfv30" path="res://scenes/menus/settings.tscn" id="3_u77qi"]
 
 [node name="p" type="Control"]
@@ -40,10 +40,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Settings"
 
-[node name="achievements" type="Button" parent="VBoxContainer"]
+[node name="charts" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "Achievements"
+text = "Charts
+"
 
 [node name="resetLevel" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -65,15 +66,16 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Quit Game"
 
-[node name="achievements" parent="." instance=ExtResource("2_i0575")]
-visible = false
-
 [node name="settings" parent="." instance=ExtResource("3_u77qi")]
 visible = false
 mouse_filter = 2
 
+[node name="charts" parent="." instance=ExtResource("2_i0575")]
+visible = false
+
 [connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/achievements" to="." method="_on_achievements_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/charts" to="." method="_on_charts_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/resetLevel" to="." method="_on_reset_level_pressed"]
 [connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/mainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/quitGame" to="." method="_on_quit_game_pressed"]

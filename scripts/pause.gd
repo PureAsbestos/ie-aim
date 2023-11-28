@@ -9,7 +9,7 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("pause") && !MenuButtons.disableKeyboard:
-		if $"settings".visible|| $achievements.visible:
+		if $"settings".visible|| $charts.visible:
 			pass
 		else:
 			if paused:
@@ -31,9 +31,9 @@ func _on_settings_button_pressed():
 	MenuButtons.pmenuButton = true
 	$settings.show()
 
-func _on_achievements_button_pressed():
+func _on_charts_button_pressed():
 	MenuButtons.pmenuButton = true
-	$achievements.show()
+	$charts.show()
 
 func _on_reset_level_pressed():
 	get_tree().paused = false
@@ -46,4 +46,5 @@ func _on_main_menu_pressed():
 	get_tree().paused = false
 	MenuButtons._on_return_button_pressed()
 
-
+func _on_quit_game_pressed():
+	get_tree().quit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxu0yshg8o8i0"]
+[gd_scene load_steps=11 format=3 uid="uid://bxu0yshg8o8i0"]
 
 [ext_resource type="Script" path="res://scripts/levelScripts/level.gd" id="1_lfivh"]
 
@@ -17,7 +17,21 @@ glow_enabled = true
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_n7hgu"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_axn8r"]
+[sub_resource type="QuadMesh" id="QuadMesh_dur1q"]
+size = Vector2(300, 300)
+orientation = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_1rip5"]
+size = Vector2(300, 300)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dnn80"]
+size = Vector2(300, 300)
+
+[sub_resource type="QuadMesh" id="QuadMesh_2ll3b"]
+size = Vector2(300, 300)
+orientation = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_r1rjw"]
 size = Vector2(300, 300)
 orientation = 1
 
@@ -45,47 +59,46 @@ shape = SubResource("WorldBoundaryShape3D_n7hgu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Leftwall"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 150, 0, 0)
-mesh = SubResource("QuadMesh_axn8r")
+mesh = SubResource("QuadMesh_dur1q")
 
 [node name="Rightwall" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 300, 0, 300)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 300)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Rightwall"]
 shape = SubResource("WorldBoundaryShape3D_n7hgu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Rightwall"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 146.532, 0, 4.76837e-07)
-mesh = SubResource("QuadMesh_axn8r")
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -150, 0, 0)
+mesh = SubResource("QuadMesh_1rip5")
 
 [node name="Ground" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, -0.0066148, 0.999978, 0, -0.999978, -0.0066148, 0, 0, 178.167)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Ground"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_n7hgu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Ground"]
-transform = Transform3D(1, 0, 0, 0, -4.37722e-08, -1, 0, 1, -4.37722e-08, 146.532, 24.7121, 0.163468)
-mesh = SubResource("QuadMesh_axn8r")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 150)
+mesh = SubResource("PlaneMesh_dnn80")
 
 [node name="Backwall" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(-4.41485e-08, 0, -1.01, 0, 1.01, 0, 1.01, 0, -4.41485e-08, 300, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 300, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Backwall"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_n7hgu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Backwall"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 146.532, 0, 0)
-mesh = SubResource("QuadMesh_axn8r")
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 150, 0, 0)
+mesh = SubResource("QuadMesh_2ll3b")
 
 [node name="Upperground" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 145.113, 182.943)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 150, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Upperground"]
-transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_n7hgu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Upperground"]
-transform = Transform3D(1, 0, 0, 0, -4.37722e-08, 1, 0, -1, -4.37722e-08, 146.532, 35.0024, 0.163467)
-mesh = SubResource("QuadMesh_axn8r")
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 150, 0, 150)
+mesh = SubResource("QuadMesh_r1rjw")

@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr26gqn8loott"]
+
+[ext_resource type="Script" path="res://scripts/levelScripts/flickShot.gd" id="1_g3xia"]
+[ext_resource type="PackedScene" uid="uid://cvdtmp4tqkjvv" path="res://scenes/levels/room.tscn" id="2_pakp7"]
+[ext_resource type="PackedScene" uid="uid://bsdo8tqx7ffas" path="res://scenes/Character.tscn" id="3_1q408"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jol7j"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_w4thx"]
+sky_material = SubResource("ProceduralSkyMaterial_jol7j")
+
+[sub_resource type="Environment" id="Environment_v6n0q"]
+background_mode = 2
+sky = SubResource("Sky_w4thx")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="flickShot" type="Node3D"]
+script = ExtResource("1_g3xia")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v6n0q")
+
+[node name="room" parent="WorldEnvironment" instance=ExtResource("2_pakp7")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment/room"]
+transform = Transform3D(0.0871558, 0.86273, -0.498097, 0, 0.5, 0.866026, 0.996195, -0.0754791, 0.0435779, 0, 100, 150)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="CharacterBody3D" parent="WorldEnvironment" instance=ExtResource("3_1q408")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, -25)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 93.0
+offset_top = 227.0
+offset_right = 133.0
+offset_bottom = 250.0
+text = "Flick Shot"

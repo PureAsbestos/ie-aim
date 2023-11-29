@@ -27,13 +27,13 @@ func _handle_scene_change(go_to_scene: String, levelNum: int):
 				0:
 					pass
 				1:
-					next_scene_name = "level1"
+					next_scene_name = "gridShot"
 				2:
-					next_scene_name = "level2"
+					next_scene_name = "targetTrack"
 				3:
-					next_scene_name = "level3"
+					next_scene_name = "flickShot"
 				4:
-					next_scene_name = "level4"
+					next_scene_name = "timedShot"
 				5:
 					next_scene_name = "level5"
 				_:

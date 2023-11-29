@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjiu8rct3n1p2"]
 
-[ext_resource type="Script" path="res://scripts/Scenemanager.gd" id="1_depqi"]
 [ext_resource type="PackedScene" uid="uid://cfsqqyirq7lwq" path="res://scenes/menus/title.tscn" id="1_fn6tt"]
+[ext_resource type="Script" path="res://scripts/menuScripts/Scenemanager.gd" id="1_nnbx5"]
 
 [sub_resource type="Animation" id="Animation_lkdpl"]
 resource_name = "fade_in"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -12,7 +13,7 @@ tracks/0/path = NodePath("overlayLayer/Overlay:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -20,6 +21,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_qqu23"]
 resource_name = "fade_out"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -27,7 +29,7 @@ tracks/0/path = NodePath("overlayLayer/Overlay:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -48,7 +50,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Scenemanager" type="Node2D" parent="."]
-script = ExtResource("1_depqi")
+script = ExtResource("1_nnbx5")
 
 [node name="overlayLayer" type="CanvasLayer" parent="Scenemanager"]
 

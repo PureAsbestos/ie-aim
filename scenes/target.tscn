@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgprcsmjdbrha"]
+[gd_scene load_steps=5 format=3 uid="uid://chocbmfsmld30"]
 
 [ext_resource type="Script" path="res://scripts/target.gd" id="1_lbtor"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ndvia"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_fkarr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_koy3x"]
+albedo_color = Color(1, 0, 0, 1)
 
 [node name="target" type="Sprite3D"]
 script = ExtResource("1_lbtor")
@@ -14,7 +17,9 @@ script = ExtResource("1_lbtor")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hitBox"]
 shape = SubResource("SphereShape3D_ndvia")
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="hitBox"]
+[node name="CSGMesh3D" type="CSGMesh3D" parent="hitBox/CollisionShape3D"]
 mesh = SubResource("SphereMesh_fkarr")
+material = SubResource("StandardMaterial3D_koy3x")
 
-[connection signal="input_event" from="hitBox" to="." method="_on_hit_box_input_event"]
+[connection signal="area_entered" from="hitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="hitBox" to="." method="_on_hit_box_body_entered"]

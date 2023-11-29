@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b17bs5lalttet"]
+[gd_scene load_steps=7 format=3 uid="uid://cy73ttcdq5esr"]
 
 [ext_resource type="Script" path="res://scripts/Character.gd" id="1_sfax3"]
-[ext_resource type="PackedScene" uid="uid://e5cl6wybdqrf" path="res://scenes/gun.tscn" id="2_1eauq"]
+[ext_resource type="PackedScene" uid="uid://dbmx0qunnoo20" path="res://scenes/gun.tscn" id="2_1eauq"]
+[ext_resource type="Script" path="res://scenes/Camera3D.gd" id="2_xrxci"]
 [ext_resource type="Texture2D" uid="uid://bprtc5cipr1d4" path="res://assets/crosshair.png" id="4_vbhvw"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f6quy"]
@@ -24,9 +25,10 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.628171, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
+script = ExtResource("2_xrxci")
 
 [node name="Gun" parent="Neck/Camera3D" instance=ExtResource("2_1eauq")]
-transform = Transform3D(-0.228351, 0, 0.973579, 0, 1, 0, -0.973579, 0, -0.228351, 0.30401, -0.378889, -1.10812)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.30401, -0.378889, -1.10812)
 
 [node name="TextureRect" type="TextureRect" parent="Neck/Camera3D"]
 anchors_preset = 8
@@ -41,3 +43,9 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_vbhvw")
+
+[node name="RayCast3D" type="RayCast3D" parent="Neck/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.837991)
+target_position = Vector3(0, 0, -500)
+hit_from_inside = true
+collide_with_areas = true

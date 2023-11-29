@@ -7,9 +7,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+#func _process(delta):
+	#pass
 
+@warning_ignore("unused_parameter")
 func _physics_process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		print("ki9ll")

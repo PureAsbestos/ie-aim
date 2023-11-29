@@ -20,6 +20,3 @@ shape = SubResource("SphereShape3D_ndvia")
 [node name="CSGMesh3D" type="CSGMesh3D" parent="hitBox/CollisionShape3D"]
 mesh = SubResource("SphereMesh_fkarr")
 material = SubResource("StandardMaterial3D_koy3x")
-
-[connection signal="area_entered" from="hitBox" to="." method="_on_hit_box_area_entered"]
-[connection signal="body_entered" from="hitBox" to="." method="_on_hit_box_body_entered"]

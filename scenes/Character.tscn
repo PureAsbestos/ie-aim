@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b17bs5lalttet"]
 
 [ext_resource type="Script" path="res://scripts/Character.gd" id="1_sfax3"]
-[ext_resource type="PackedScene" path="res://scenes/gun.tscn" id="2_1eauq"]
+[ext_resource type="PackedScene" uid="uid://e5cl6wybdqrf" path="res://scenes/gun.tscn" id="2_1eauq"]
 [ext_resource type="Texture2D" uid="uid://bprtc5cipr1d4" path="res://assets/crosshair.png" id="4_vbhvw"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f6quy"]

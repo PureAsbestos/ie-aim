@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf8wmeq4oh8jp"]
+[gd_scene load_steps=4 format=3 uid="uid://bgprcsmjdbrha"]
 
 [ext_resource type="Script" path="res://scripts/target.gd" id="1_lbtor"]
 
@@ -14,8 +14,7 @@ script = ExtResource("1_lbtor")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hitBox"]
 shape = SubResource("SphereShape3D_ndvia")
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="hitBox/CollisionShape3D"]
+[node name="CSGMesh3D" type="CSGMesh3D" parent="hitBox"]
 mesh = SubResource("SphereMesh_fkarr")
 
-[connection signal="area_entered" from="hitBox" to="." method="_on_hit_box_area_entered"]
-[connection signal="body_entered" from="hitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="input_event" from="hitBox" to="." method="_on_hit_box_input_event"]

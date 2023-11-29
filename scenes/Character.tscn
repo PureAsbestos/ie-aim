@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsdo8tqx7ffas"]
+[gd_scene load_steps=6 format=3 uid="uid://b17bs5lalttet"]
 
 [ext_resource type="Script" path="res://scripts/Character.gd" id="1_sfax3"]
-[ext_resource type="PackedScene" uid="uid://dbmx0qunnoo20" path="res://scenes/gun.tscn" id="2_1eauq"]
-[ext_resource type="Script" path="res://scripts/autoload/global_settings.gd" id="3_pqoy3"]
+[ext_resource type="PackedScene" path="res://scenes/gun.tscn" id="2_1eauq"]
 [ext_resource type="Texture2D" uid="uid://bprtc5cipr1d4" path="res://assets/crosshair.png" id="4_vbhvw"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f6quy"]
@@ -28,7 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.628171, 0)
 
 [node name="Gun" parent="Neck/Camera3D" instance=ExtResource("2_1eauq")]
 transform = Transform3D(-0.228351, 0, 0.973579, 0, 1, 0, -0.973579, 0, -0.228351, 0.30401, -0.378889, -1.10812)
-script = ExtResource("3_pqoy3")
 
 [node name="TextureRect" type="TextureRect" parent="Neck/Camera3D"]
 anchors_preset = 8

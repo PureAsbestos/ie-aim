@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxu0yshg8o8i0"]
+[gd_scene load_steps=7 format=3 uid="uid://24p5twtjge3f"]
 
 [ext_resource type="Script" path="res://scripts/levelScripts/gridShot.gd" id="1_1ruso"]
 [ext_resource type="PackedScene" uid="uid://cvdtmp4tqkjvv" path="res://scenes/levels/room.tscn" id="2_hxf53"]
-[ext_resource type="PackedScene" uid="uid://bsdo8tqx7ffas" path="res://scenes/Character.tscn" id="3_1wpvw"]
+[ext_resource type="PackedScene" uid="uid://b17bs5lalttet" path="res://scenes/Character.tscn" id="3_1wpvw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jol7j"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://uhypuwevbn7a"]
 
-[ext_resource type="Script" path="res://scripts/charts.gd" id="1_dk4co"]
+[ext_resource type="Script" path="res://scripts/menuScripts/charts.gd" id="1_dk4co"]
 
 [node name="charts" type="Control"]
 process_mode = 3

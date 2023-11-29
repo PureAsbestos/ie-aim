@@ -1,12 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://cfsqqyirq7lwq"]
 
-[ext_resource type="Script" path="res://scripts/title.gd" id="1_2g8wt"]
+[ext_resource type="Script" path="res://scripts/menuScripts/title.gd" id="1_1gvb7"]
 
 [node name="titleScreen" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_2g8wt")
+script = ExtResource("1_1gvb7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

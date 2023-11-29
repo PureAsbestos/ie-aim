@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvdtmp4tqkjvv"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sliuu"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_4niy0"]
+size = Vector2(100, 100)
+orientation = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_rnry8"]
+size = Vector2(100, 100)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i7we6"]
+size = Vector2(100, 100)
+
+[sub_resource type="QuadMesh" id="QuadMesh_w41v6"]
+size = Vector2(100, 100)
+orientation = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_wvyly"]
+size = Vector2(100, 100)
+orientation = 1
+
+[node name="room" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.552673, -1.52588e-05, -0.01828)
+
+[node name="Leftwall" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leftwall"]
+shape = SubResource("WorldBoundaryShape3D_sliuu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Leftwall"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 50, 0, 4.54747e-13)
+mesh = SubResource("QuadMesh_4niy0")
+
+[node name="Rightwall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 300)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rightwall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0, -200)
+shape = SubResource("WorldBoundaryShape3D_sliuu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rightwall"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -250.095, 0, -200)
+mesh = SubResource("QuadMesh_rnry8")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape3D_sliuu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 50)
+mesh = SubResource("PlaneMesh_i7we6")
+
+[node name="Backwall" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 300, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Backwall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 200)
+shape = SubResource("WorldBoundaryShape3D_sliuu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Backwall"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 50, 0, 200)
+mesh = SubResource("QuadMesh_w41v6")
+
+[node name="Upperground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 150, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Upperground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -150, 0)
+shape = SubResource("WorldBoundaryShape3D_sliuu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Upperground"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 49.859, -100.498, 50.0164)
+mesh = SubResource("QuadMesh_wvyly")

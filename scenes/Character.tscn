@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy73ttcdq5esr"]
+[gd_scene load_steps=7 format=3 uid="uid://cy73ttcdq5esr"]
 
 [ext_resource type="Script" path="res://scripts/Character.gd" id="1_sfax3"]
 [ext_resource type="PackedScene" uid="uid://dbmx0qunnoo20" path="res://scenes/gun.tscn" id="2_1eauq"]
 [ext_resource type="Script" path="res://scripts/autoload/global_settings.gd" id="3_pqoy3"]
+[ext_resource type="Texture2D" uid="uid://35q05llowy3d" path="res://assets/Crosshair.png" id="4_lu574"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_itt10"]
 
@@ -27,3 +28,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.628171, 0)
 [node name="Gun" parent="Neck/Camera3D" instance=ExtResource("2_1eauq")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.451276, -0.628171, -1.05193)
 script = ExtResource("3_pqoy3")
+
+[node name="TextureRect" type="TextureRect" parent="Neck/Camera3D"]
+offset_left = 556.0
+offset_top = 304.0
+offset_right = 596.0
+offset_bottom = 344.0
+texture = ExtResource("4_lu574")

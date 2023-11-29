@@ -30,7 +30,7 @@ transform = Transform3D(0.0871558, 0.86273, -0.498097, 0, 0.5, 0.866026, 0.99619
 shadow_enabled = true
 sky_mode = 1
 
-[node name="CharacterBody3D" parent="WorldEnvironment" instance=ExtResource("3_5luca")]
+[node name="player" parent="WorldEnvironment" instance=ExtResource("3_5luca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, -25)
 
 [node name="Label" type="Label" parent="."]

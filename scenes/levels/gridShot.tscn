@@ -30,7 +30,7 @@ transform = Transform3D(0.0866982, 0.862949, -0.497798, -0.00174245, 0.49981, 0.
 shadow_enabled = true
 sky_mode = 1
 
-[node name="CharacterBody3D" parent="WorldEnvironment" instance=ExtResource("3_1wpvw")]
+[node name="player" parent="WorldEnvironment" instance=ExtResource("3_1wpvw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, -25)
 
 [node name="Label" type="Label" parent="."]
@@ -39,3 +39,9 @@ offset_top = 227.0
 offset_right = 133.0
 offset_bottom = 250.0
 text = "Grid Shot"
+
+[node name="targetSpawnTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="targetSpawnTimer" to="." method="_on_target_spawn_timer_timeout"]

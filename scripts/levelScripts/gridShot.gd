@@ -15,6 +15,8 @@ const Z : float = -15
 func _ready():
 	await animate.animation_finished
 	GlobalSettings.counter = 0
+	GlobalSettings.timeout = false
+	GlobalSettings.gsScore = 0
 	$timer.timerReady()
 
 func randomize_position() -> Vector3:

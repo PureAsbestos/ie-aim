@@ -43,8 +43,19 @@ func game_time():
 			showResults()
 
 func showResults():
-	pass
+	$resultsPanel/ColorRect/results2.text = "Score: " + str(GlobalSettings.gsScore)
+	$resultsPanel.show()
+	MenuButtons.disableKeyboard = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().paused = true
 
+func _on_reset_level_pressed():
+	get_tree().paused = false
+	MenuButtons._on_levelSelect_button_pressed(get_node("../").levelNum)
 
-func _on_target_spawn_timer_timeout():
-	pass # Replace with function body.
+func _on_main_menu_pressed():
+	get_tree().paused = false
+	MenuButtons._on_return_button_pressed()
+
+func _on_quit_game_pressed():
+	get_tree().quit()

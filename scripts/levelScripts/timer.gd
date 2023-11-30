@@ -10,7 +10,7 @@ func timerReady():
 	$countDown.start(1)
 
 func startGame():
-	startTime = 5
+	startTime = 60
 	sec = startTime
 	$countDown.start(1)
 	$"../targetSpawnTimer".start(1)
@@ -23,12 +23,12 @@ func game_time():
 		sec -= 1
 		if startTime == 4:
 			$startCountDown.text = str(sec)
-		elif startTime == 5:
+		elif startTime == 60:
 			$gameCountDown.text = str(minute) + ":" + str(sec)
 	elif sec == 1:
 		sec -= 1
 		$startCountDown.text = "GO!"
-		if startTime == 5:
+		if startTime == 60:
 			$gameCountDown.text = str(minute) + ":" + str(sec)
 			$countDown.stop()
 	if sec == 0:

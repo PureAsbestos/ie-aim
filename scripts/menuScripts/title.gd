@@ -5,7 +5,7 @@ func _on_level_select_pressed():
 	$levelSelect.show()
 
 func _on_charts_pressed():
-	MenuButtons._on_charts_button_pressed()
+	get_tree().quit()
 
 func _on_setting_button_pressed():
 	MenuButtons._on_settings_button_pressed()

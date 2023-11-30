@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c75ggam17ikbo"]
 
 [ext_resource type="Script" path="res://scripts/menuScripts/pause.gd" id="1_hp82j"]
-[ext_resource type="Theme" uid="uid://cq1sw36ag2hu1" path="res://scenes/menus/theme.tres" id="1_kr73g"]
+[ext_resource type="Theme" uid="uid://co8018sbwci4f" path="res://scenes/menus/theme.tres" id="1_kr73g"]
 [ext_resource type="PackedScene" uid="uid://uhypuwevbn7a" path="res://scenes/menus/charts.tscn" id="2_i0575"]
 [ext_resource type="PackedScene" uid="uid://cwfm6a0rfv30" path="res://scenes/menus/settings.tscn" id="3_u77qi"]
 
@@ -15,9 +15,9 @@ script = ExtResource("1_hp82j")
 
 [node name="ColorRect" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 378.0
-offset_top = 65.0
-offset_right = 758.0
+offset_left = 384.0
+offset_top = 64.0
+offset_right = 744.0
 offset_bottom = 595.0
 
 [node name="Label" type="Label" parent="."]

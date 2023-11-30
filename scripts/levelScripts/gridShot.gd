@@ -14,12 +14,13 @@ const Z : float = -15
 
 func _ready():
 	await animate.animation_finished
+	GlobalSettings.counter = 0
 	$timer.timerReady()
 
 func randomize_position() -> Vector3:
 	randomize()
-	var x : float = randf_range(MIN_X, MAX_X)
-	var y : float = randf_range(MIN_Y, MAX_Y)
+	var x : float = int(randf_range(MIN_X, MAX_X))
+	var y : float = int(randf_range(MIN_Y, MAX_Y))
 	var random_coord : Vector3 = Vector3(x, y, Z)
 	return random_coord
 

@@ -1,7 +1,7 @@
 extends Sprite3D
 
 func being_tracked():
-
+	pass
 
 
 

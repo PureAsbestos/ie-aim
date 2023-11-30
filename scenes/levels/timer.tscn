@@ -10,6 +10,7 @@ offset_bottom = 40.0
 script = ExtResource("1_l2ifs")
 
 [node name="startCountDown" type="Label" parent="."]
+layout_mode = 0
 offset_left = 454.0
 offset_top = 158.0
 offset_right = 694.0
@@ -20,6 +21,7 @@ text = "Ready?"
 horizontal_alignment = 1
 
 [node name="gameCountDown" type="Label" parent="."]
+layout_mode = 0
 offset_left = 547.0
 offset_top = 12.0
 offset_right = 646.0

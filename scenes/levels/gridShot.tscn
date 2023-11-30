@@ -27,7 +27,7 @@ environment = SubResource("Environment_v6n0q")
 [node name="room" parent="WorldEnvironment" instance=ExtResource("2_hxf53")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment/room"]
-transform = Transform3D(0.0866982, 0.862949, -0.497798, -0.00174245, 0.49981, 0.866134, 0.996233, -0.0742248, 0.0448362, -0.00450867, 49.9141, 50.0858)
+transform = Transform3D(0.0866983, 0.862949, -0.497798, -0.00174245, 0.49981, 0.866133, 0.996233, -0.0742249, 0.0448363, -0.00450867, 49.9141, 50.0858)
 shadow_enabled = true
 sky_mode = 1
 

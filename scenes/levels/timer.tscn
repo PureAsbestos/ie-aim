@@ -48,18 +48,27 @@ metadata/_edit_group_ = true
 layout_mode = 0
 offset_left = 632.0
 offset_top = 24.0
-offset_right = 760.0
+offset_right = 880.0
 offset_bottom = 64.0
 color = Color(0, 0.635294, 1, 0.458824)
 metadata/_edit_group_ = true
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 368.0
+offset_left = 256.0
 offset_top = 24.0
 offset_right = 496.0
 offset_bottom = 64.0
 color = Color(1, 0.552941, 0.160784, 0.458824)
 metadata/_edit_group_ = true
+
+[node name="score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 24.0
+offset_right = 512.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 25
+text = "Score: 0"
 
 [connection signal="timeout" from="countDown" to="." method="timer_timout"]

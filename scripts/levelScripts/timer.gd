@@ -10,7 +10,7 @@ func timerReady():
 	$countDown.start(1)
 
 func startGame():
-	startTime = 60
+	startTime = 5
 	sec = startTime
 	$countDown.start(1)
 	$"../targetSpawnTimer".start(1)

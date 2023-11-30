@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://b804bxh2221dq"]
+
+[ext_resource type="Script" path="res://scripts/targetT.gd" id="1_7ch3g"]
+[ext_resource type="Material" uid="uid://bn7wfpkx1q6a" path="res://assets/textures/redTarget.tres" id="2_0ijlc"]
+[ext_resource type="Script" path="res://scenes/CSGMesh3D.gd" id="2_q0pls"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ndvia"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fkarr"]
+
+[node name="target" type="Sprite3D"]
+script = ExtResource("1_7ch3g")
+
+[node name="hitBox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hitBox"]
+shape = SubResource("SphereShape3D_ndvia")
+
+[node name="TargetMesh" type="CSGMesh3D" parent="hitBox/CollisionShape3D"]
+mesh = SubResource("SphereMesh_fkarr")
+material = ExtResource("2_0ijlc")
+script = ExtResource("2_q0pls")

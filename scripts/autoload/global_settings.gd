@@ -3,7 +3,8 @@ extends Node
 var fullscreen = false
 var vSync = false
 var sensVal = 1
-var timer: Timer = Timer.new()
+var counter = 0
+var maxTargets = false # max targets on screen at a time is 5
 
 func instance_node(node, location, parent):
 	var node_instance = node.instantiate()

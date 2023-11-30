@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbmx0qunnoo20"]
+[gd_scene load_steps=4 format=3 uid="uid://dbmx0qunnoo20"]
 
 [ext_resource type="Script" path="res://scripts/my_gun.gd" id="1_uv7yb"]
 [ext_resource type="ArrayMesh" uid="uid://dj5l47c22bk44" path="res://assets/Glock.obj" id="1_vs4ce"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e12k4"]
+albedo_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+roughness = 0.29
 
 [node name="Gun" type="Node3D"]
 script = ExtResource("1_uv7yb")
@@ -9,3 +13,4 @@ script = ExtResource("1_uv7yb")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, -8.74228e-09, -0.1, 0, 0.2, -4.37114e-09, 0, 0, 0)
 mesh = ExtResource("1_vs4ce")
+surface_material_override/0 = SubResource("StandardMaterial3D_e12k4")

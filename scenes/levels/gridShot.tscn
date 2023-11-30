@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxu0yshg8o8i0"]
+[gd_scene load_steps=8 format=3 uid="uid://bxu0yshg8o8i0"]
 
 [ext_resource type="Script" path="res://scripts/levelScripts/gridShot.gd" id="1_1ruso"]
 [ext_resource type="PackedScene" uid="uid://cvdtmp4tqkjvv" path="res://scenes/levels/room.tscn" id="2_hxf53"]
 [ext_resource type="PackedScene" uid="uid://cy73ttcdq5esr" path="res://scenes/Character.tscn" id="3_1wpvw"]
+[ext_resource type="PackedScene" uid="uid://b8o858su4nroo" path="res://scenes/levels/timer.tscn" id="4_3miur"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jol7j"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -33,27 +34,8 @@ sky_mode = 1
 [node name="player" parent="WorldEnvironment" instance=ExtResource("3_1wpvw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 1, -5)
 
-[node name="startCountDown" type="Label" parent="."]
-offset_left = 454.0
-offset_top = 158.0
-offset_right = 694.0
-offset_bottom = 257.0
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 70
-text = "Ready?"
-horizontal_alignment = 1
-
 [node name="targetSpawnTimer" type="Timer" parent="."]
 
-[node name="gameCountDown" type="Label" parent="."]
-offset_left = 547.0
-offset_top = 12.0
-offset_right = 646.0
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 25
-text = "1:00"
-
-[node name="timer" type="Timer" parent="."]
+[node name="timer" parent="." instance=ExtResource("4_3miur")]
 
 [connection signal="timeout" from="targetSpawnTimer" to="." method="_on_target_spawn_timer_timeout"]
-[connection signal="timeout" from="timer" to="." method="timer_timout"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbmx0qunnoo20"]
 
-[ext_resource type="Script" path="res://scripts/gun.gd" id="1_uhspm"]
+[ext_resource type="Script" path="res://scripts/my_gun.gd" id="1_uv7yb"]
 [ext_resource type="ArrayMesh" uid="uid://dj5l47c22bk44" path="res://assets/Glock.obj" id="1_vs4ce"]
 
 [node name="Gun" type="Node3D"]
-script = ExtResource("1_uhspm")
+script = ExtResource("1_uv7yb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, -8.74228e-09, -0.1, 0, 0.2, -4.37114e-09, 0, 0, 0)

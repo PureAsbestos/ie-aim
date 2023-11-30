@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://cmw1h0xyp4wd5" path="res://assets/materials/wall.material" id="1_iaqke"]
 [ext_resource type="Material" uid="uid://b6m74hu8s5dfq" path="res://assets/materials/ground.material" id="2_u5jap"]
-[ext_resource type="Material" uid="uid://m2g2bla6d8ko" path="res://assets/materials/ceiling.material" id="3_h1qqa"]
+[ext_resource type="PackedScene" uid="uid://xwnmbd61vcwd" path="res://assets/materials/Light bulb.glb" id="3_n5i77"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sliuu"]
 
@@ -25,7 +25,7 @@ size = Vector2(100, 100)
 orientation = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_wvyly"]
-material = ExtResource("3_h1qqa")
+material = ExtResource("2_u5jap")
 size = Vector2(100, 100)
 orientation = 1
 
@@ -90,3 +90,12 @@ mesh = SubResource("QuadMesh_wvyly")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Upperground"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_cmefa")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 46, 50)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 50.0
+
+[node name="Light bulb" parent="OmniLight3D" instance=ExtResource("3_n5i77")]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0, 0, 0)

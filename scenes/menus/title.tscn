@@ -1,25 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfsqqyirq7lwq"]
+[gd_scene load_steps=4 format=3 uid="uid://cfsqqyirq7lwq"]
 
 [ext_resource type="Script" path="res://scripts/menuScripts/title.gd" id="1_1gvb7"]
+[ext_resource type="Theme" uid="uid://cq1sw36ag2hu1" path="res://scenes/menus/theme.tres" id="1_fr6sq"]
+[ext_resource type="PackedScene" uid="uid://cvdtmp4tqkjvv" path="res://scenes/levels/room.tscn" id="3_jncxr"]
 
 [node name="titleScreen" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("1_fr6sq")
 script = ExtResource("1_1gvb7")
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+size = Vector2i(1152, 648)
+
+[node name="room" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_jncxr")]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/room"]
+transform = Transform3D(-0.831647, -1.01265, -3.77927, 0, 3.8637, -1.03528, 3.91259, -0.215246, -0.803309, 35.3833, 45.1455, 39.0235)
+current = true
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1155.0
 offset_bottom = 649.0
-color = Color(1, 0.462745, 0.568627, 1)
+color = Color(0.0745098, 0, 0.352941, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 499.0
-offset_top = 36.0
-offset_right = 1000.0
-offset_bottom = 195.0
+offset_left = 710.0
+offset_top = 48.0
+offset_right = 1049.0
+offset_bottom = 207.0
 theme_override_font_sizes/font_size = 100
 text = "IE-Aim"
 horizontal_alignment = 1
@@ -27,17 +45,17 @@ vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 45.0
-offset_top = 182.0
-offset_right = 394.0
-offset_bottom = 614.0
+offset_left = 125.0
+offset_top = 220.0
+offset_right = 474.0
+offset_bottom = 498.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 109.0
-offset_right = 323.0
-offset_bottom = 316.0
+offset_left = 24.0
+offset_top = 17.0
+offset_right = 321.0
+offset_bottom = 263.0
 
 [node name="levelSelect" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -58,17 +76,17 @@ text = "settings"
 [node name="levelSelect" type="Panel" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 43.0
-offset_top = 182.0
-offset_right = 392.0
-offset_bottom = 614.0
+offset_left = 47.0
+offset_top = 46.0
+offset_right = 396.0
+offset_bottom = 618.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="levelSelect"]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 18.0
 offset_right = 324.0
-offset_bottom = 416.0
+offset_bottom = 540.0
 
 [node name="gridShot" type="Button" parent="levelSelect/VBoxContainer"]
 layout_mode = 2

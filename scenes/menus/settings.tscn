@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwfm6a0rfv30"]
+[gd_scene load_steps=5 format=3 uid="uid://cwfm6a0rfv30"]
 
 [ext_resource type="Script" path="res://scripts/menuScripts/settings.gd" id="1_53ome"]
+[ext_resource type="Theme" uid="uid://cq1sw36ag2hu1" path="res://scenes/menus/theme.tres" id="1_nlxaa"]
 [ext_resource type="Script" path="res://scripts/menuScripts/sensSlider.gd" id="2_q857c"]
 [ext_resource type="PackedScene" uid="uid://clwh0f7b4vgwe" path="res://scenes/menus/volumeSlider.tscn" id="2_vox6b"]
 
@@ -8,6 +9,7 @@
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("1_nlxaa")
 script = ExtResource("1_53ome")
 metadata/_edit_horizontal_guides_ = []
 
@@ -15,7 +17,7 @@ metadata/_edit_horizontal_guides_ = []
 layout_mode = 0
 offset_right = 1154.0
 offset_bottom = 649.0
-color = Color(0.141176, 0.427451, 0.392157, 1)
+color = Color(0.133333, 0.164706, 0.2, 1)
 
 [node name="settingsLabel" type="Label" parent="."]
 layout_mode = 0
@@ -36,6 +38,7 @@ offset_right = 678.0
 offset_bottom = 539.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 4
 metadata/_edit_group_ = true
 
 [node name="videoLabel" type="Label" parent="Video"]
@@ -98,6 +101,7 @@ offset_left = 259.0
 offset_top = 88.0
 offset_right = 880.0
 offset_bottom = 362.0
+theme_override_constants/separation = 4
 metadata/_edit_group_ = true
 
 [node name="audioLabel" type="Label" parent="Audio"]

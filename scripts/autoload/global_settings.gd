@@ -7,6 +7,7 @@ var counter = 0
 var maxTargets = false # max targets on screen at a time is 5
 var timeout = false
 var tracked = false
+var gsScore = 0
 
 func instance_node(node, location, parent):
 	var node_instance = node.instantiate()

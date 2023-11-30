@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciigb7tekx5lp"]
+
+[ext_resource type="Script" path="res://scripts/flicktarget.gd" id="1_rdd12"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2d51a"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_xqbho"]
+radius = 0.2
+height = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25og8"]
+albedo_color = Color(0.894118, 0.686275, 0.717647, 1)
+
+[node name="flicktarget" type="Sprite3D"]
+script = ExtResource("1_rdd12")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_2d51a")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Area3D/CollisionShape3D"]
+mesh = SubResource("SphereMesh_xqbho")
+material = SubResource("StandardMaterial3D_25og8")

@@ -42,3 +42,7 @@ func game_time():
 
 func showResults():
 	pass
+
+
+func _on_target_spawn_timer_timeout():
+	pass # Replace with function body.

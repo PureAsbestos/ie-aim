@@ -15,6 +15,9 @@ const Z : float = -20
 
 func _ready():
 	await animate.animation_finished
+	GlobalSettings.counter = 0
+	GlobalSettings.gsScore = 0
+	GlobalSettings.timeout = false
 	$timer.timerReady()
 
 func randomize_position() -> Vector3:
@@ -26,6 +29,7 @@ func randomize_position() -> Vector3:
 
 # only 5 targets on screen at a time, no more spawning after game time ends.
 func _on_target_spawn_timer_timeout():
+	$timer/score.text = "Score: " + str(GlobalSettings.gsScore)
 	if GlobalSettings.maxTargets == false && GlobalSettings.timeout == false:
 		var location = randomize_position()
 		var temp = GlobalSettings.instance_node(flicktarget, location, self)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfsqqyirq7lwq"]
 
 [ext_resource type="Script" path="res://scripts/menuScripts/title.gd" id="1_1gvb7"]
-[ext_resource type="Theme" uid="uid://cq1sw36ag2hu1" path="res://scenes/menus/theme.tres" id="1_fr6sq"]
+[ext_resource type="Theme" uid="uid://u31j3qqg080j" path="res://scenes/menus/theme.tres" id="1_fr6sq"]
 [ext_resource type="PackedScene" uid="uid://cvdtmp4tqkjvv" path="res://scenes/levels/room.tscn" id="3_jncxr"]
 [ext_resource type="AudioStream" uid="uid://bwta6ym2keksb" path="res://assets/audio/music/menu.wav" id="4_c407g"]
 
@@ -81,10 +81,10 @@ text = "settings"
 [node name="levelSelect" type="Panel" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 47.0
-offset_top = 46.0
-offset_right = 396.0
-offset_bottom = 618.0
+offset_left = 111.0
+offset_top = 93.0
+offset_right = 460.0
+offset_bottom = 572.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="levelSelect"]
 layout_mode = 0
@@ -111,13 +111,8 @@ text = "Flick Shot"
 [node name="timedShot" type="Button" parent="levelSelect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Timed Shot
+text = "Track Shot
 "
-
-[node name="Button5" type="Button" parent="levelSelect/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Level 5"
 
 [node name="backButton" type="Button" parent="levelSelect/VBoxContainer"]
 layout_mode = 2

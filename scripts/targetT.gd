@@ -3,6 +3,7 @@ extends Sprite3D
 @onready var red = preload("res://assets/textures/redTarget.tres")
 func being_tracked():
 	$hitBox/CollisionShape3D/TargetMesh.material = blue
+	GlobalSettings.gsScore += 10
 
 
 

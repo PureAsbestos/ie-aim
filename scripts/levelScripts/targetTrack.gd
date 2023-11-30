@@ -20,6 +20,8 @@ const MAX_Z : float = -23
 
 func _ready():
 	await animate.animation_finished
+	GlobalSettings.timeout = false
+	GlobalSettings.gsScore = 0
 	$timer.timerReady()
 
 func randomize_position() -> Vector3:
@@ -38,6 +40,7 @@ func _process(delta):
 
 
 func _on_target_spawn_timer_timeout():
+	$timer/score.text = "Score: " + str(GlobalSettings.gsScore)
 	if (!started):
 		var location = next_position
 		targetInst = GlobalSettings.instance_node(target, location, self)

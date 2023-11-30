@@ -1,15 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8o858su4nroo"]
 
 [ext_resource type="Script" path="res://scripts/levelScripts/timer.gd" id="1_l2ifs"]
-
-[sub_resource type="Theme" id="Theme_0q4v5"]
+[ext_resource type="Theme" uid="uid://u31j3qqg080j" path="res://scenes/menus/theme.tres" id="1_vtiq1"]
 
 [node name="timer" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme = SubResource("Theme_0q4v5")
+theme = ExtResource("1_vtiq1")
 script = ExtResource("1_l2ifs")
 
 [node name="startCountDown" type="Label" parent="."]
@@ -24,51 +23,107 @@ text = "Ready?"
 horizontal_alignment = 1
 
 [node name="gameCountDown" type="Label" parent="."]
-layout_mode = 0
-offset_left = 536.0
+layout_mode = 2
+offset_left = 488.0
 offset_top = 24.0
-offset_right = 592.0
+offset_right = 582.0
 offset_bottom = 62.0
 theme_override_font_sizes/font_size = 25
 text = "1:00"
-metadata/_edit_group_ = true
 
 [node name="countDown" type="Timer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 496.0
+layout_mode = 2
+offset_left = 448.0
 offset_top = 16.0
-offset_right = 632.0
+offset_right = 576.0
 offset_bottom = 72.0
 color = Color(0.521141, 0.521141, 0.521141, 0.458824)
-metadata/_edit_group_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 632.0
+layout_mode = 2
+offset_left = 576.0
 offset_top = 24.0
-offset_right = 880.0
+offset_right = 768.0
 offset_bottom = 64.0
 color = Color(0, 0.635294, 1, 0.458824)
-metadata/_edit_group_ = true
 
 [node name="ColorRect3" type="ColorRect" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_left = 256.0
 offset_top = 24.0
-offset_right = 496.0
+offset_right = 448.0
 offset_bottom = 64.0
 color = Color(1, 0.552941, 0.160784, 0.458824)
-metadata/_edit_group_ = true
 
 [node name="score" type="Label" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_left = 272.0
 offset_top = 24.0
-offset_right = 512.0
-offset_bottom = 64.0
+offset_right = 448.0
+offset_bottom = 62.0
 theme_override_font_sizes/font_size = 25
 text = "Score: 0"
 
+[node name="resultsPanel" type="Control" parent="."]
+process_mode = 3
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="Panel" parent="resultsPanel"]
+offset_left = 336.0
+offset_top = 88.0
+offset_right = 696.0
+offset_bottom = 576.0
+
+[node name="resetLevel" type="Button" parent="resultsPanel/ColorRect"]
+offset_left = 104.0
+offset_top = 232.0
+offset_right = 247.0
+offset_bottom = 275.0
+theme_override_font_sizes/font_size = 25
+text = "Reset Level"
+
+[node name="mainMenu" type="Button" parent="resultsPanel/ColorRect"]
+offset_left = 104.0
+offset_top = 312.0
+offset_right = 249.0
+offset_bottom = 355.0
+theme_override_font_sizes/font_size = 25
+text = "Main Menu"
+
+[node name="quitGame" type="Button" parent="resultsPanel/ColorRect"]
+offset_left = 104.0
+offset_top = 400.0
+offset_right = 248.0
+offset_bottom = 443.0
+theme_override_font_sizes/font_size = 25
+text = "Quit Game"
+
+[node name="results" type="Label" parent="resultsPanel/ColorRect"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 15.0
+offset_right = 271.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 50
+text = "Results"
+
+[node name="results2" type="Label" parent="resultsPanel/ColorRect"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 120.0
+offset_right = 268.0
+offset_bottom = 203.0
+theme_override_font_sizes/font_size = 40
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="countDown" to="." method="timer_timout"]
+[connection signal="pressed" from="resultsPanel/ColorRect/resetLevel" to="." method="_on_reset_level_pressed"]
+[connection signal="pressed" from="resultsPanel/ColorRect/mainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="resultsPanel/ColorRect/quitGame" to="." method="_on_quit_game_pressed"]

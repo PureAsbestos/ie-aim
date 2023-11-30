@@ -28,7 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.628171, 0)
 script = ExtResource("2_xrxci")
 
 [node name="Gun" parent="Neck/Camera3D" instance=ExtResource("2_1eauq")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.30401, -0.378889, -1.10812)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.704033, -0.378889, -1.10812)
 
 [node name="TextureRect" type="TextureRect" parent="Neck/Camera3D"]
 anchors_preset = 8

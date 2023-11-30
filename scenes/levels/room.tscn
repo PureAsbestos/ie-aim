@@ -33,6 +33,7 @@ orientation = 1
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cmefa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rivgp"]
+render_priority = 0
 shader = ExtResource("4_6u73s")
 
 [sub_resource type="SphereMesh" id="SphereMesh_lvf75"]

@@ -35,6 +35,7 @@ offset_left = 445.0
 offset_top = 191.0
 offset_right = 683.0
 offset_bottom = 699.0
+theme_override_constants/separation = 20
 
 [node name="settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2

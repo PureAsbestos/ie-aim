@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfsqqyirq7lwq"]
+[gd_scene load_steps=5 format=3 uid="uid://cfsqqyirq7lwq"]
 
 [ext_resource type="Script" path="res://scripts/menuScripts/title.gd" id="1_1gvb7"]
 [ext_resource type="Theme" uid="uid://cq1sw36ag2hu1" path="res://scenes/menus/theme.tres" id="1_fr6sq"]
 [ext_resource type="PackedScene" uid="uid://cvdtmp4tqkjvv" path="res://scenes/levels/room.tscn" id="3_jncxr"]
+[ext_resource type="AudioStream" uid="uid://bwta6ym2keksb" path="res://assets/audio/music/menu.wav" id="4_c407g"]
 
 [node name="titleScreen" type="Control"]
 process_mode = 3
@@ -17,7 +18,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
 size = Vector2i(1152, 648)
+render_target_update_mode = 4
 
 [node name="room" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_jncxr")]
 
@@ -120,7 +123,11 @@ theme_override_font_sizes/font_size = 40
 text = "Back
 "
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_c407g")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Panel/VBoxContainer/levelSelect" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/charts" to="." method="_on_charts_pressed"]

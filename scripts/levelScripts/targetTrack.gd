@@ -30,6 +30,7 @@ func randomize_position() -> Vector3:
 	var random_coord : Vector3 = Vector3(x, y, z)
 	return random_coord
 	
+@warning_ignore("unused_parameter")
 func _process(delta):
 	if started:
 		if targetInst.position.is_equal_approx(targetInst.next_position):

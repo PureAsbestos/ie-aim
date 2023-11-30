@@ -1,4 +1,4 @@
-shader_type canvas_item;
+shader_type spatial;
 render_mode unshaded;
 
 //const float PI = 4.0*atan(1.0);
@@ -70,18 +70,14 @@ float frac( in vec2 c )
 	
     return d;
 }
-varying vec2 vert;
 
-void vertex(){
-    vert = VERTEX;
-}
 void fragment() {
 //	float x = (UV.x-UV.y+1.)/2.;
-	vec2 ps = SCREEN_PIXEL_SIZE;
-    vec2 ratio = (ps.x > ps.y) ? vec2(ps.y / ps.x, 1) : vec2(1, ps.x / ps.y);
-	vec2 uv = 5.*UV-vec2(3.,2.5);
+//	vec2 ps = UV;
+//    vec2 ratio = (ps.x > ps.y) ? vec2(ps.y / ps.x, 1) : vec2(1, ps.x / ps.y);
+	vec2 uv = (5.*UV-vec2(4,2.5))*2.5;
 	float x = frac(uv);
 	x = clamp(pow(4.0*x,0.2), 0.0, 1.0);
 	vec3 color = cubehelix(x, 0.5, -1.5, 1.0, 1.0);
-	COLOR = vec4(color, 1.);
+	ALBEDO = color;
 }

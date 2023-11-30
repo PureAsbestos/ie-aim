@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckqgy5anrpnf7"]
+[gd_scene load_steps=8 format=3 uid="uid://ckqgy5anrpnf7"]
 
 [ext_resource type="Script" path="res://scripts/levelScripts/targetTrack.gd" id="1_2me8y"]
 [ext_resource type="PackedScene" uid="uid://cvdtmp4tqkjvv" path="res://scenes/levels/room.tscn" id="2_6rerh"]
 [ext_resource type="PackedScene" uid="uid://cy73ttcdq5esr" path="res://scenes/Character.tscn" id="3_5luca"]
+[ext_resource type="PackedScene" uid="uid://b8o858su4nroo" path="res://scenes/levels/timer.tscn" id="4_ho188"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jol7j"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -26,16 +27,15 @@ environment = SubResource("Environment_v6n0q")
 [node name="room" parent="WorldEnvironment" instance=ExtResource("2_6rerh")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment/room"]
-transform = Transform3D(0.0871558, 0.86273, -0.498097, 0, 0.5, 0.866026, 0.996195, -0.0754791, 0.0435779, 0, 100, 150)
+transform = Transform3D(0.0866982, 0.862949, -0.497798, -0.00174245, 0.49981, 0.866134, 0.996233, -0.0742248, 0.0448362, -0.00450867, 49.9141, 50.0858)
 shadow_enabled = true
 sky_mode = 1
 
 [node name="player" parent="WorldEnvironment" instance=ExtResource("3_5luca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 1, -5)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 93.0
-offset_top = 227.0
-offset_right = 133.0
-offset_bottom = 250.0
-text = "Target Track"
+[node name="targetSpawnTimer" type="Timer" parent="."]
+
+[node name="timer" parent="." instance=ExtResource("4_ho188")]
+
+[connection signal="timeout" from="targetSpawnTimer" to="." method="_on_target_spawn_timer_timeout"]

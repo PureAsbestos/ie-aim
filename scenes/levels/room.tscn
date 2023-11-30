@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://cmw1h0xyp4wd5" path="res://assets/materials/wall.material" id="1_iaqke"]
 [ext_resource type="Material" uid="uid://b6m74hu8s5dfq" path="res://assets/materials/ground.material" id="2_u5jap"]
 [ext_resource type="PackedScene" uid="uid://xwnmbd61vcwd" path="res://assets/materials/Light bulb.glb" id="3_n5i77"]
-[ext_resource type="ArrayMesh" uid="uid://dj5l47c22bk44" path="res://assets/Glock.obj" id="4_apudt"]
+[ext_resource type="Shader" path="res://fractal.gdshader" id="4_6u73s"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sliuu"]
 
@@ -32,10 +32,15 @@ orientation = 1
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cmefa"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_i51v1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rivgp"]
+render_priority = 0
+shader = ExtResource("4_6u73s")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ob7xk"]
-albedo_color = Color(0.203922, 0.203922, 0.203922, 1)
+[sub_resource type="SphereMesh" id="SphereMesh_lvf75"]
+material = SubResource("ShaderMaterial_rivgp")
+flip_faces = true
+radius = 100.0
+height = 200.0
 
 [node name="room" type="Node3D"]
 transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, 0, 0, 0)
@@ -107,10 +112,5 @@ omni_range = 50.0
 transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 5.07134e-08, 8, 48.8398)
-mesh = SubResource("CapsuleMesh_i51v1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.1, 0, 3.82137e-16, 3.82137e-16, 8.74228e-09, -0.1, 0, 0.2, 4.37114e-09, 0.427266, -0.302186, 0.615267)
-mesh = ExtResource("4_apudt")
-surface_material_override/0 = SubResource("StandardMaterial3D_ob7xk")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 50)
+mesh = SubResource("SphereMesh_lvf75")

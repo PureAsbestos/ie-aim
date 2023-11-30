@@ -67,16 +67,16 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Level Select"
 
+[node name="charts" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Record Charts
+"
+
 [node name="settingButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "settings"
-
-[node name="quitGame" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Quit Game
-"
 
 [node name="levelSelect" type="Panel" parent="."]
 visible = false
@@ -127,8 +127,8 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="Panel/VBoxContainer/levelSelect" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/charts" to="." method="_on_charts_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/settingButton" to="." method="_on_setting_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/quitGame" to="." method="_on_charts_pressed"]
 [connection signal="pressed" from="levelSelect/VBoxContainer/gridShot" to="." method="_on_grid_shot_pressed"]
 [connection signal="pressed" from="levelSelect/VBoxContainer/targetTrack" to="." method="_on_target_track_pressed"]
 [connection signal="pressed" from="levelSelect/VBoxContainer/flickShot" to="." method="_on_flick_shot_pressed"]

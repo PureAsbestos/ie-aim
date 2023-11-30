@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cr26gqn8loott"]
+[gd_scene load_steps=8 format=3 uid="uid://cr26gqn8loott"]
 
 [ext_resource type="Script" path="res://scripts/levelScripts/flickShot.gd" id="1_g3xia"]
 [ext_resource type="PackedScene" uid="uid://cvdtmp4tqkjvv" path="res://scenes/levels/room.tscn" id="2_pakp7"]
 [ext_resource type="PackedScene" uid="uid://cy73ttcdq5esr" path="res://scenes/Character.tscn" id="3_1q408"]
+[ext_resource type="PackedScene" uid="uid://b8o858su4nroo" path="res://scenes/levels/timer.tscn" id="4_jpxmy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jol7j"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -33,9 +34,8 @@ sky_mode = 1
 [node name="player" parent="WorldEnvironment" instance=ExtResource("3_1q408")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 1, -5)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 93.0
-offset_top = 227.0
-offset_right = 133.0
-offset_bottom = 250.0
-text = "Flick Shot"
+[node name="targetSpawnTimer" type="Timer" parent="."]
+
+[node name="timer" parent="." instance=ExtResource("4_jpxmy")]
+
+[connection signal="timeout" from="targetSpawnTimer" to="." method="_on_target_spawn_timer_timeout"]

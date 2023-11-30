@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/levelScripts/targetTrack.gd" id="1_2me8y"]
 [ext_resource type="PackedScene" uid="uid://cvdtmp4tqkjvv" path="res://scenes/levels/room.tscn" id="2_6rerh"]
-[ext_resource type="PackedScene" uid="uid://bsdo8tqx7ffas" path="res://scenes/Character.tscn" id="3_5luca"]
+[ext_resource type="PackedScene" uid="uid://cy73ttcdq5esr" path="res://scenes/Character.tscn" id="3_5luca"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jol7j"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -31,7 +31,7 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="player" parent="WorldEnvironment" instance=ExtResource("3_5luca")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, -25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 1, -5)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 93.0

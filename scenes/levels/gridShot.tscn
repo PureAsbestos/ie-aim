@@ -31,17 +31,29 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="player" parent="WorldEnvironment" instance=ExtResource("3_1wpvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, -25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 1, -5)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 93.0
-offset_top = 227.0
-offset_right = 133.0
-offset_bottom = 250.0
-text = "Grid Shot"
+[node name="startCountDown" type="Label" parent="."]
+offset_left = 454.0
+offset_top = 158.0
+offset_right = 694.0
+offset_bottom = 257.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 70
+text = "Ready?"
+horizontal_alignment = 1
 
 [node name="targetSpawnTimer" type="Timer" parent="."]
-wait_time = 0.25
-autostart = true
+
+[node name="gameCountDown" type="Label" parent="."]
+offset_left = 547.0
+offset_top = 12.0
+offset_right = 646.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+text = "1:00"
+
+[node name="timer" type="Timer" parent="."]
 
 [connection signal="timeout" from="targetSpawnTimer" to="." method="_on_target_spawn_timer_timeout"]
+[connection signal="timeout" from="timer" to="." method="timer_timout"]

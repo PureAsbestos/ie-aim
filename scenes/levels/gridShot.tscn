@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/levelScripts/gridShot.gd" id="1_1ruso"]
 [ext_resource type="PackedScene" uid="uid://cvdtmp4tqkjvv" path="res://scenes/levels/room.tscn" id="2_hxf53"]
 [ext_resource type="PackedScene" uid="uid://cy73ttcdq5esr" path="res://scenes/Character.tscn" id="3_1wpvw"]
-[ext_resource type="PackedScene" uid="uid://b8o858su4nroo" path="res://scenes/levels/timer.tscn" id="4_3miur"]
+[ext_resource type="PackedScene" path="res://scenes/levels/timer.tscn" id="4_3miur"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jol7j"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -28,6 +28,7 @@ environment = SubResource("Environment_v6n0q")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment/room"]
 transform = Transform3D(0.0866983, 0.862949, -0.497798, -0.00174245, 0.49981, 0.866133, 0.996233, -0.0742249, 0.0448363, -0.00450867, 49.9141, 50.0858)
+visible = false
 shadow_enabled = true
 sky_mode = 1
 

@@ -7,7 +7,7 @@
 [sub_resource type="SphereMesh" id="SphereMesh_fkarr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_koy3x"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 0.631373, 0.870588, 1)
 
 [node name="target" type="Sprite3D"]
 script = ExtResource("1_lbtor")
@@ -20,3 +20,6 @@ shape = SubResource("SphereShape3D_ndvia")
 [node name="CSGMesh3D" type="CSGMesh3D" parent="hitBox/CollisionShape3D"]
 mesh = SubResource("SphereMesh_fkarr")
 material = SubResource("StandardMaterial3D_koy3x")
+
+[connection signal="area_entered" from="hitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="hitBox" to="." method="_on_hit_box_body_entered"]

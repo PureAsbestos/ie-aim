@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://chocbmfsmld30"]
+[gd_scene load_steps=5 format=3 uid="uid://b804bxh2221dq"]
 
-[ext_resource type="Script" path="res://scripts/target.gd" id="1_lbtor"]
+[ext_resource type="Script" path="res://scripts/targetT.gd" id="1_7ch3g"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ndvia"]
 
@@ -10,7 +10,7 @@
 albedo_color = Color(1, 0, 0, 1)
 
 [node name="target" type="Sprite3D"]
-script = ExtResource("1_lbtor")
+script = ExtResource("1_7ch3g")
 
 [node name="hitBox" type="Area3D" parent="."]
 

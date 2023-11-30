@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfgpb6y2hkt0e"]
+[gd_scene load_steps=8 format=3 uid="uid://ckqgy5anrpnf7"]
 
 [ext_resource type="Script" path="res://scripts/levelScripts/targetTrack.gd" id="1_2me8y"]
 [ext_resource type="PackedScene" uid="uid://cvdtmp4tqkjvv" path="res://scenes/levels/room.tscn" id="2_6rerh"]
 [ext_resource type="PackedScene" uid="uid://cy73ttcdq5esr" path="res://scenes/Character.tscn" id="3_5luca"]
-[ext_resource type="PackedScene" uid="uid://dk3qut6rsdc1a" path="res://scenes/levels/timer.tscn" id="4_ho188"]
+[ext_resource type="PackedScene" uid="uid://b8o858su4nroo" path="res://scenes/levels/timer.tscn" id="4_ho188"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jol7j"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

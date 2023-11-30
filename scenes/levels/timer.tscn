@@ -1,20 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk3qut6rsdc1a"]
+[gd_scene load_steps=3 format=3 uid="uid://b8o858su4nroo"]
 
 [ext_resource type="Script" path="res://scripts/levelScripts/timer.gd" id="1_l2ifs"]
+
+[sub_resource type="Theme" id="Theme_0q4v5"]
 
 [node name="timer" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = SubResource("Theme_0q4v5")
 script = ExtResource("1_l2ifs")
 
 [node name="startCountDown" type="Label" parent="."]
 layout_mode = 0
-offset_left = 454.0
-offset_top = 158.0
-offset_right = 694.0
-offset_bottom = 257.0
+offset_left = 448.0
+offset_top = 160.0
+offset_right = 688.0
+offset_bottom = 259.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 70
 text = "Ready?"
@@ -22,13 +25,41 @@ horizontal_alignment = 1
 
 [node name="gameCountDown" type="Label" parent="."]
 layout_mode = 0
-offset_left = 547.0
-offset_top = 12.0
-offset_right = 646.0
-offset_bottom = 50.0
+offset_left = 536.0
+offset_top = 24.0
+offset_right = 592.0
+offset_bottom = 62.0
 theme_override_font_sizes/font_size = 25
 text = "1:00"
+metadata/_edit_group_ = true
 
 [node name="countDown" type="Timer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 16.0
+offset_right = 632.0
+offset_bottom = 72.0
+color = Color(0.521141, 0.521141, 0.521141, 0.458824)
+metadata/_edit_group_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 632.0
+offset_top = 24.0
+offset_right = 760.0
+offset_bottom = 64.0
+color = Color(0, 0.635294, 1, 0.458824)
+metadata/_edit_group_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 24.0
+offset_right = 496.0
+offset_bottom = 64.0
+color = Color(1, 0.552941, 0.160784, 0.458824)
+metadata/_edit_group_ = true
 
 [connection signal="timeout" from="countDown" to="." method="timer_timout"]

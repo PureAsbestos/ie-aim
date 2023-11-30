@@ -24,12 +24,15 @@ func game_time():
 		if startTime == 4:
 			$startCountDown.text = str(sec)
 		elif startTime == 5:
-			$gameCountDown.text = str(minute) + ":" + str(sec)
+			if sec > 9:
+				$gameCountDown.text = str(minute) + ":" + str(sec)
+			else: 
+				$gameCountDown.text = str(minute) + ":0" + str(sec)
 	elif sec == 1:
 		sec -= 1
 		$startCountDown.text = "GO!"
 		if startTime == 5:
-			$gameCountDown.text = str(minute) + ":" + str(sec)
+			$gameCountDown.text = str(minute) + ":0" + str(sec)
 			$countDown.stop()
 	if sec == 0:
 		$startCountDown.hide()

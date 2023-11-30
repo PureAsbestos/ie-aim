@@ -15,9 +15,9 @@ script = ExtResource("1_hp82j")
 
 [node name="ColorRect" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 378.0
-offset_top = 65.0
-offset_right = 758.0
+offset_left = 384.0
+offset_top = 64.0
+offset_right = 744.0
 offset_bottom = 595.0
 
 [node name="Label" type="Label" parent="."]

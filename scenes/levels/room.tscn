@@ -1,24 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvdtmp4tqkjvv"]
+[gd_scene load_steps=11 format=3 uid="uid://cvdtmp4tqkjvv"]
+
+[ext_resource type="Material" uid="uid://cmw1h0xyp4wd5" path="res://assets/materials/wall.material" id="1_iaqke"]
+[ext_resource type="Material" uid="uid://b6m74hu8s5dfq" path="res://assets/materials/ground.material" id="2_u5jap"]
+[ext_resource type="Material" uid="uid://m2g2bla6d8ko" path="res://assets/materials/ceiling.material" id="3_h1qqa"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sliuu"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_4niy0"]
+material = ExtResource("1_iaqke")
 size = Vector2(100, 100)
 orientation = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_rnry8"]
+material = ExtResource("1_iaqke")
 size = Vector2(100, 100)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_i7we6"]
+material = ExtResource("2_u5jap")
 size = Vector2(100, 100)
 
 [sub_resource type="QuadMesh" id="QuadMesh_w41v6"]
+material = ExtResource("1_iaqke")
 size = Vector2(100, 100)
 orientation = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_wvyly"]
+material = ExtResource("3_h1qqa")
 size = Vector2(100, 100)
 orientation = 1
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cmefa"]
 
 [node name="room" type="Node3D"]
 transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, 0, 0, 0)
@@ -27,6 +38,7 @@ transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Leftwall"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_sliuu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Leftwall"]
@@ -38,11 +50,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 300)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rightwall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0, -200)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -200, 0, -200)
 shape = SubResource("WorldBoundaryShape3D_sliuu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Rightwall"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -250.095, 0, -200)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -250, 0, -200)
 mesh = SubResource("QuadMesh_rnry8")
 
 [node name="Ground" type="StaticBody3D" parent="."]
@@ -60,7 +72,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 300, 0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Backwall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 200)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 200)
 shape = SubResource("WorldBoundaryShape3D_sliuu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Backwall"]
@@ -68,13 +80,13 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 50, 0,
 mesh = SubResource("QuadMesh_w41v6")
 
 [node name="Upperground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 150, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Upperground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -150, 0)
-shape = SubResource("WorldBoundaryShape3D_sliuu")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Upperground"]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 49.859, -100.498, 50.0164)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 50, 0, 50)
 mesh = SubResource("QuadMesh_wvyly")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Upperground"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_cmefa")
